@@ -2,13 +2,21 @@
 
 
 .navbar-brand {
-    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.25rem;
     .bi-bookmark-heart {
         color: darkred;
+        font-size: 2rem;
+        padding-bottom: -0.15em;
     }
 
         
     .navbar-title {
         padding-left: 0.25em;
+        
     }
 }
