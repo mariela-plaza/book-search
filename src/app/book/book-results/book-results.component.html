@@ -3,12 +3,15 @@
         <img [src]="book.imagePath" class="card-img-top" alt="...">
     </div>
     <div class="card-body">
-        <a href="#">
+        <a href="#" style="text-decoration: none;">
             <h5 class="card-title">{{ book.title }}</h5>
         </a>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ book.authors[0] }}</li>
-        <li class="list-group-item">{{ book.avgRating }}</li>
+        <li class="list-group-item book-rating-data">
+            <span>{{ book.avgRating }}({{book.ratingCounts}})</span>
+            <span>{{ book.language }}</span>
+        </li>
+        <li class="list-group-item book-authors">{{ book.authors[0] }}</li>
     </ul>
 </div>
