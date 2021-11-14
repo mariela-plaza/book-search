@@ -1,0 +1,17 @@
+.card {
+    width: 16rem;
+    display: inline-block;
+    margin: 0.75em;
+}
+
+.book-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.card-img-top {
+    width: 80%;
+    height: 200px;
+}
