@@ -1,14 +1,14 @@
 export class Book {
     constructor(
-        title: string,
-        authors: string[],
-        imagePath: string,
-        avgRating: number,
-        ratingCounts: number,
-        publisher: string,
-        description: string,
-        language: string,
-        categories: string[],
-        pageCount: number
+        public title: string,
+        public authors: string[],
+        public imagePath: string,
+        public avgRating: number,
+        public ratingCounts: number,
+        public publisher: string,
+        public description: string,
+        public language: string,
+        public categories: string[],
+        public pageCount: number
     ) { }
 }
