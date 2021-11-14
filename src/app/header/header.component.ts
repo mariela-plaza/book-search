@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIBookService } from '../api-book.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private booksSearch: APIBookService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log('data submitted')
+
+    this.booksSearch.searchQuery();
   }
 
 }
