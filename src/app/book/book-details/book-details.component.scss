@@ -1,3 +1,7 @@
+.container {
+    margin-top: 1.4rem;
+ }
+
 .trim-text {
     display: block;
     display: -webkit-box;
@@ -17,4 +21,40 @@
     &:hover {
         overflow: scroll;
     }
+}
+
+.rating {
+    margin-top: 0.75rem;
+
+    .rating-text, .rating-stars {
+        font-size: 1.5rem;
+    }
+}
+
+.categories {
+    margin-bottom: 1rem;
+
+    .categories-text {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .categories-list {
+        font-size: 1.15rem;
+    }
+}
+
+
+.title {
+    margin-top: 1rem
+}
+
+.authors-text {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.image-placeholder {
+    border-radius: 50%;
+    display: flex;
 }

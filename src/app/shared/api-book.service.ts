@@ -12,7 +12,7 @@ export class APIBookService {
   constructor(private http: HttpClient, private booksService: BooksService) { }
 
   searchQuery(queryParam: string) {
-    this.http.get<APIWrapper>(`https://www.googleapis.com/books/v1/volumes?q=${queryParam}&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE`)
+    this.http.get<APIWrapper>(`https://www.googleapis.com/books/v1/volumes?q=harry&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE`)
       .subscribe(data => {
         const booksArrayAPI = data.items.map(volume => {
           return new Book(volume)

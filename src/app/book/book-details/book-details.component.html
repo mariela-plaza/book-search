@@ -1,10 +1,37 @@
 <div class="container">
-    <div class="row">
+    <div class="row image-description">
         <div class="col-12 col-xl-3">
             <img [src]="selectedBook.imagePath" alt="">
         </div>
-        <div class="col-12 col-xl-9">
+        <div *ngIf="selectedBook.description" class="col-12 col-xl-9">
             <p class="trim-text">{{ selectedBook.description }}</p>
         </div>
+    </div>
+
+    <div class="row title">
+        <h4>{{ selectedBook.title }}</h4>
+    </div>
+
+    <div *ngIf="selectedBook.avgRating" class="row rating">
+        <div class="d-flex justify-content-between">
+            <p class="rating-text">Rating:</p>
+            <p class="rating-stars">{{ selectedBook.avgRating }} ({{selectedBook.ratingsCount}})</p>
+        </div>
+    </div>
+
+    <div *ngIf="selectedBook.categories" class="row categories">
+        <p class="categories-text">Categories:</p>
+        <div class="categories-list" *ngFor="let category of selectedBook.categories">
+            <span class="badge rounded-pill bg-primary">{{ category }}</span>
+        </div>
+    </div>
+
+    <div *ngIf="selectedBook.authors" class="row authors">
+        <p class="authors-text">Authors:</p>
+        <div class="authors-display" *ngFor="let author of selectedBook.authors">
+            <img class="image-placeholder" src='https://plchldr.co/i/125x125?bg=29c2f3&fc=000000&text={{author}}'
+                alt="">
+        </div>
+
     </div>
 </div>
