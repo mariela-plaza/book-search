@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { BookResultsComponent } from './book/book-results/book-results.component';
 import { BookDetailsComponent } from './book/book-details/book-details.component';
 import { FormsModule } from '@angular/forms';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     HeaderComponent,
     BookResultsComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

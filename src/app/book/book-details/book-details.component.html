@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pe-3">
     <div class="row image-description">
         <div class="col-12 col-xl-3">
             <img [src]="selectedBook.imagePath" alt="">
@@ -13,9 +13,9 @@
     </div>
 
     <div *ngIf="selectedBook.avgRating" class="row rating">
-        <div class="d-flex justify-content-between">
-            <p class="rating-text">Rating:</p>
-            <p class="rating-stars">{{ selectedBook.avgRating }} ({{selectedBook.ratingsCount}})</p>
+        <div class="d-flex justify-content-start">
+            <p class="rating-text">Rating: </p>
+            <p class="rating-stars">{{ selectedBook.avgRating }}({{selectedBook.ratingsCount}})</p>
         </div>
     </div>
 
