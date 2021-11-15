@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Book } from '../book/book.model';
+import { BooksService } from '../book/books-service/books.service';
 import { APIWrapper } from './api-wrapper.model';
 
 @Injectable({
@@ -7,17 +9,15 @@ import { APIWrapper } from './api-wrapper.model';
 })
 export class APIBookService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private booksService: BooksService) { }
 
   searchQuery() {
-    this.http.get<any>('https://www.googleapis.com/books/v1/volumes?q=harry&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE')
+    this.http.get<APIWrapper>('https://www.googleapis.com/books/v1/volumes?q=harry&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE')
       .subscribe(data => {
-        const wrapper = new APIWrapper(data);
-        console.log(wrapper);
-
-        // for (let item of wrapper.items) {
-        //   console.log(item.volumeInfo.title);
-        // }
+        const booksArrayAPI = data.items.map(volume => {
+          return new Book(volume)
+        });
+        this.booksService.updateBooks(booksArrayAPI);
       })
   }
 }
