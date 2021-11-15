@@ -5,10 +5,11 @@
             <span class="navbar-title">BookSearch</span>
         </a>
 
-        <form class="d-flex">
+        <form class="d-flex" (ngSubmit)="onSubmit()" #form="ngForm">
             <div class="input-group">
-                <input class="form-control me-2" type="search" placeholder="search book" aria-label="Search">
-                <span class="input-group-text" type="button" id="search-icon" (click)="onSubmit()"><i
+                <input class="form-control me-2" type="search" placeholder="search book" aria-label="Search"
+                    name="queryParam" ngModel>
+                <span class="input-group-text" type="submit" id="search-icon" (click)="onSubmit()"><i
                         class="bi bi-search"></i></span>
             </div>
         </form>

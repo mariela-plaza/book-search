@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { APIBookService } from '../shared/api-book.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { APIBookService } from '../shared/api-book.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('form') bookForm: NgForm;
 
   constructor(private booksSearch: APIBookService) { }
 
@@ -14,8 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('data submitted')
-
+    console.log(this.bookForm.value.queryParam);
     this.booksSearch.searchQuery();
   }
 
