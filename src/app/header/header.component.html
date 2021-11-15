@@ -10,7 +10,7 @@
                 <input class="form-control me-2" type="search" placeholder="search book" aria-label="Search"
                     name="queryParam" ngModel>
                 <span class="input-group-text" type="submit" id="search-icon" (click)="onSubmit()"><i
-                        class="bi bi-search"></i></span>
+                        class="bi bi-search" [routerLink]="['/books']"></i></span>
             </div>
         </form>
     </div>

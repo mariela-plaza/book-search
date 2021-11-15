@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="book-image">
+        <a [routerLink]="['/books', index]"><img [src]="book.imagePath" class="card-img-top" alt="..."></a>
+    </div>
+    <div class="card-body">
+        <a href="#" style="text-decoration: none;">
+            <h5 class="card-title"></h5>
+        </a>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item book-rating-data">
+            <span>{{ book.avgRating }}({{ book.ratingsCount }})</span>
+            <span>{{ book.language }}</span>
+        </li>
+        <li class="list-group-item book-authors">{{ book.authors[0] }}</li>
+    </ul>
+</div>

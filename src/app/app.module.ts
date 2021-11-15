@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { BookResultsComponent } from './book/book-results/book-results.component';
+import { BookResultsComponent } from './book/book-list/book-results/book-results.component';
 import { BookDetailsComponent } from './book/book-details/book-details.component';
 import { FormsModule } from '@angular/forms';
 import { BookComponent } from './book/book.component';
+import { BookListComponent } from './book/book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookComponent } from './book/book.component';
     HeaderComponent,
     BookResultsComponent,
     BookDetailsComponent,
-    BookComponent
+    BookComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
