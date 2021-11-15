@@ -13,6 +13,10 @@ export class BooksService {
     return [...this.booksArray];
   }
 
+  getBook(index: number) {
+    return this.booksArray.slice()[index];
+  }
+
   updateBooks(booksArray: Book[]) {
     this.booksArray.push(...booksArray);
     this.emitBooksChanged();

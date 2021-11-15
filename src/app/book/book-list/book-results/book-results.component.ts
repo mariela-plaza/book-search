@@ -14,21 +14,4 @@ export class BookResultsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // booksArray: Book[] = [];
-  // booksChanged: Subscription
-
-  // constructor(private booksService: BooksService) { }
-
-  // ngOnInit(): void {
-  //   this.booksChanged = this.booksService.booksChanged.subscribe(books => {
-  //     this.booksArray = books;
-  //   })
-
-  //   this.booksArray = this.booksService.getBooks();
-  // }
-
-  // ngOnDestroy() {
-  //   this.booksChanged.unsubscribe();
-  // }
-
 }
