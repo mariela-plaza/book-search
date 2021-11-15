@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { APIWrapper } from './api-wrapper.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,12 @@ export class APIBookService {
   searchQuery() {
     this.http.get<any>('https://www.googleapis.com/books/v1/volumes?q=harry&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE')
       .subscribe(data => {
-        const booksArray = data.items;
+        const wrapper = new APIWrapper(data);
+        console.log(wrapper);
 
-        for (let item of booksArray) {
-          console.log(item.volumeInfo.title);
-        }
+        // for (let item of wrapper.items) {
+        //   console.log(item.volumeInfo.title);
+        // }
       })
   }
 }

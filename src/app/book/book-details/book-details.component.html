@@ -1,1 +1,10 @@
-<p>book-details works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <img [src]="selectedBook.imagePath" alt="">
+        </div>
+        <div class="col-9">
+            <p class="trim-text">{{ selectedBook.description }}</p>
+        </div>
+    </div>
+</div>

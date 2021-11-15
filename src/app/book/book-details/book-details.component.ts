@@ -8,12 +8,12 @@ import { BooksService } from '../books-service/books.service';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
-  booksArray: Book[] = [];
+  selectedBook: Book;
 
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.booksArray = this.booksService.getBooks();
+    this.selectedBook = this.booksService.getBooks()[0];
   }
 
 }
