@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.bookForm.value.queryParam);
-    this.booksSearch.searchQuery();
+    const queryParam = this.bookForm.value.queryParam;
+    this.booksSearch.searchQuery(queryParam);
   }
 
 }
