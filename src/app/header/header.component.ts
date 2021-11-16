@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BooksService } from '../book/books-service/books.service';
 import { APIBookService } from '../shared/api-book.service';
 
 @Component({
@@ -10,9 +12,14 @@ import { APIBookService } from '../shared/api-book.service';
 export class HeaderComponent implements OnInit {
   @ViewChild('form') bookForm: NgForm;
 
-  constructor(private booksSearch: APIBookService) { }
+  constructor(private booksSearch: APIBookService, private router: Router, private booksService: BooksService) { }
 
   ngOnInit(): void {
+  }
+
+  onNavbarClick() {
+    this.booksService.clearBooksArray();
+    this.router.navigate(['/']);
   }
 
   onSubmit() {

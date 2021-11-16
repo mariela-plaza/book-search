@@ -23,6 +23,11 @@ export class BooksService {
     console.log(this.booksArray);
   }
 
+  clearBooksArray() {
+    this.booksArray = [];
+    this.emitBooksChanged();
+  }
+
   emitBooksChanged() {
     this.booksChanged.next([...this.booksArray]);
   }
