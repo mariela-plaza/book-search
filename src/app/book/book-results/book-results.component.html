@@ -1,7 +1,7 @@
 <div class="container px-0">
     <div *ngFor="let book of booksArray, let i=index" class="card">
         <div class="book-image">
-            <img [src]="book.imagePath" class="card-img-top" alt="...">
+            <img [src]="book.imagePath" class="card-img-top" alt="..." style="max-width: 140px; max-height: 200px;">
         </div>
         <div class="card-body">
             <a href="#" style="text-decoration: none;">

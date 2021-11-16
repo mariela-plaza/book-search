@@ -6,7 +6,6 @@
     display: block;
     display: -webkit-box;
 
-    max-width: 90%;
     height: 200px;
 
     margin: 0 auto;
@@ -49,10 +48,17 @@
     margin-top: 1rem
 }
 
-.authors-text {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
+.authors {
+    .authors-text {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .authors-display {
+        font-size: 1.15rem;
+    }
 }
+
 
 .image-placeholder {
     border-radius: 50%;

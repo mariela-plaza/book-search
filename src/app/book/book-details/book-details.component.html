@@ -1,6 +1,6 @@
 <div class="container pe-3">
     <div class="row image-description">
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-xl-3 ps-4">
             <img [src]="selectedBook.imagePath" alt="">
         </div>
         <div *ngIf="selectedBook.description" class="col-12 col-xl-9">
@@ -29,8 +29,7 @@
     <div *ngIf="selectedBook.authors" class="row authors">
         <p class="authors-text">Authors:</p>
         <div class="authors-display" *ngFor="let author of selectedBook.authors">
-            <img class="image-placeholder" src='https://plchldr.co/i/125x125?bg=29c2f3&fc=000000&text={{author}}'
-                alt="">
+            <span class="badge rounded-pill bg-info">{{ author }}</span>
         </div>
 
     </div>

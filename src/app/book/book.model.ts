@@ -11,7 +11,6 @@ interface VolumeInfo {
     pageCount: number
 }
 
-
 export class Book {
     public title: string;
     public authors: string[];
@@ -30,14 +29,13 @@ export class Book {
         this.title = volumeInfo.title;
         this.language = volumeInfo.language;
         this.pageCount = volumeInfo.pageCount;
+        this.imagePath = volumeInfo.imageLinks.smallThumbnail;
+        this.description = volumeInfo.description;
 
-
-        this.imagePath = (volumeInfo.imageLinks === undefined) ? 'https://via.placeholder.com/132x200' : volumeInfo.imageLinks.smallThumbnail;
         this.avgRating = (volumeInfo.averageRating === undefined) ? 0 : volumeInfo.averageRating;
         this.ratingsCount = (volumeInfo.ratingsCount === undefined) ? 0 : volumeInfo.ratingsCount;
         this.authors = (volumeInfo.authors === undefined) ? ['No author was found'] : volumeInfo.authors;
         this.publisher = (volumeInfo.publisher === undefined) ? 'No publisher was found' : volumeInfo.publisher;
-        this.description = (volumeInfo.description === undefined) ? 'No description was found' : volumeInfo.description;
         this.categories = (volumeInfo.categories === undefined) ? ['No categories'] : volumeInfo.categories;
     }
 }

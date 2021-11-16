@@ -12,19 +12,18 @@
     }
 }
 
-
 .book-image {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1em 0;
-}
 
-.card-img-top {
-    width: auto;
-    height: 200px;
-    border-radius: 10%;
-    box-shadow: 10px 10px 20px gray;
+    img.card-img-top {
+        height: 200px;
+        max-width: 140px;
+        border-radius: 10%;
+        box-shadow: 10px 10px 20px gray;
+    }
 }
 
 .card-title {
