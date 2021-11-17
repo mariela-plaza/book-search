@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BooksService } from '../book/books-service/books.service';
 import { APIBookService } from '../shared/api-book.service';
+import { BooksService } from '../shared/books-service/books.service';
 
 @Component({
   selector: 'app-header',

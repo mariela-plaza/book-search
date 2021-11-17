@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscriber, Subscription } from 'rxjs';
+import { BooksService } from 'src/app/shared/books-service/books.service';
+import { InitialBooksService } from 'src/app/shared/books-service/initial-books.service';
 import { Book } from '../book.model';
-import { BooksService } from '../books-service/books.service';
+
 
 @Component({
   selector: 'app-book-details',
@@ -12,14 +14,25 @@ import { BooksService } from '../books-service/books.service';
 export class BookDetailsComponent implements OnInit {
   bookId: number;
   selectedBook: Book;
+  onPopularBooks: boolean;
 
-  constructor(private booksService: BooksService, private route: ActivatedRoute) { }
+  constructor(private booksService: BooksService, private initialBookService: InitialBooksService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(
+      (queryParams: Params) => {
+        this.onPopularBooks = (queryParams['popularBooks'] === 'true') ? true : false;
+      }
+    )
+
     this.route.params.subscribe(
       (params: Params) => {
         this.bookId = +params['id'];
-        this.selectedBook = this.booksService.getBook(this.bookId);
+        if (this.onPopularBooks) {
+          this.selectedBook = this.initialBookService.getBook(this.bookId);
+        } else {
+          this.selectedBook = this.booksService.getBook(this.bookId);
+        }
       })
   }
 

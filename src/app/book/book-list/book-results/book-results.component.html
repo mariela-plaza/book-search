@@ -1,6 +1,7 @@
 <div class="card">
     <div class="book-image">
-        <a [routerLink]="['/books', index]"><img [src]="book.imagePath" class="card-img-top" alt="..."></a>
+        <a [routerLink]="['/books', index]" [queryParams]="{popularBooks: showPopularBooks}"><img [src]="book.imagePath"
+                class="card-img-top" alt="..."></a>
     </div>
     <div class="card-body">
         <a href="#" style="text-decoration: none;">

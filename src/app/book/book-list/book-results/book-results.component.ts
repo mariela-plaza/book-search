@@ -1,7 +1,5 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../../book.model';
-import { BooksService } from '../../books-service/books.service';
 
 @Component({
   selector: 'app-book-results',
@@ -11,6 +9,8 @@ import { BooksService } from '../../books-service/books.service';
 export class BookResultsComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
+  @Input() showPopularBooks: boolean;
+
   ngOnInit(): void {
   }
 

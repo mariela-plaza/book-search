@@ -24,9 +24,9 @@ import { BookListComponent } from './book/book-list/book-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,16 @@
-<div class="row">
+<div *ngIf="showPopularBooks" class="row">
     <div class="col-12">
-        <app-book-results *ngFor="let aBook of booksArray, let i=index" [book]="aBook" [index]=i>
+        <app-book-results *ngFor="let aBook of initialBooksArray, let i=index" [book]="aBook" [index]=i
+            [showPopularBooks]="showPopularBooks">
+
+        </app-book-results>
+    </div>
+</div>
+
+<div *ngIf="!showPopularBooks" class="row">
+    <div class="col-12">
+        <app-book-results *ngFor="let aBook of booksArray, let i=index" [book]="aBook" [index]=i
+            [showPopularBooks]="showPopularBooks">
 
         </app-book-results>
     </div>
