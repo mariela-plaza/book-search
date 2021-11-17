@@ -11,6 +11,8 @@ import { BookDetailsComponent } from './book/book-details/book-details.component
 import { FormsModule } from '@angular/forms';
 import { BookComponent } from './book/book.component';
 import { BookListComponent } from './book/book-list/book-list.component';
+import { StarsComponent } from './book/book-details/stars/stars.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { BookListComponent } from './book/book-list/book-list.component';
     BookResultsComponent,
     BookDetailsComponent,
     BookComponent,
-    BookListComponent
+    BookListComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    MatIconModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

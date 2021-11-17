@@ -15,7 +15,8 @@
     <div *ngIf="selectedBook.avgRating" class="row rating">
         <div class="d-flex justify-content-start">
             <p class="rating-text">Rating: </p>
-            <p class="rating-stars">{{ selectedBook.avgRating }}({{selectedBook.ratingsCount}})</p>
+            <app-stars [rating]="selectedBook.avgRating"></app-stars>
+            <!-- <p >{{ selectedBook.avgRating }}({{selectedBook.ratingsCount}})</p> -->
         </div>
     </div>
 
