@@ -20,7 +20,6 @@ export class BooksService {
   updateBooks(booksArray: Book[]) {
     this.booksArray.push(...booksArray);
     this.emitBooksChanged();
-    console.log(this.booksArray);
   }
 
   clearBooksArray() {

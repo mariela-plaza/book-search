@@ -4,6 +4,7 @@ import { Book } from '../book.model';
 import { BooksService } from '../../shared/books-service/books.service';
 import { InitialBooksService } from 'src/app/shared/books-service/initial-books.service';
 import { APIBookService } from 'src/app/shared/api-book.service';
+import { BooksLoadedStatusService } from 'src/app/shared/books-service/books-loaded-status.service';
 
 @Component({
   selector: 'app-book-list',
@@ -11,7 +12,8 @@ import { APIBookService } from 'src/app/shared/api-book.service';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-  showPopularBooks: boolean = true;
+  showPopularBooks: boolean;
+  booksStatusSub: Subscription;
 
   booksArray: Book[] = [];
   booksChanged: Subscription
@@ -19,11 +21,14 @@ export class BookListComponent implements OnInit {
   initialBooksArray: Book[] = [];
   initialBooksArrayChanged: Subscription;
 
-  constructor(private booksService: BooksService, private initialBooksService: InitialBooksService, private apiBooks: APIBookService) { }
+  constructor(private booksService: BooksService, private initialBooksService: InitialBooksService,
+    private loadedBooksStatus: BooksLoadedStatusService, private apiBooks: APIBookService) { }
 
   ngOnInit(): void {
     // First list of books
     this.apiBooks.searchPopularBooks();
+    this.booksStatusSub = this.loadedBooksStatus.isPopularBooks.subscribe(
+      popularBooks => this.showPopularBooks = popularBooks)
 
     this.initialBooksArrayChanged = this.initialBooksService.initialBooksChanged.subscribe(
       initialBooks => {
@@ -32,7 +37,8 @@ export class BookListComponent implements OnInit {
 
     // List of Books fetched from requests
     this.booksChanged = this.booksService.booksChanged.subscribe(books => {
-      this.showPopularBooks = false;
+      this.booksStatusSub = this.loadedBooksStatus.isPopularBooks.subscribe(
+        popularBooks => this.showPopularBooks = popularBooks)
       this.booksArray = books;
     })
 
