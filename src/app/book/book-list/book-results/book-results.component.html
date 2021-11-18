@@ -1,7 +1,11 @@
-<div class="card">
+<div class="card" [ngClass]="{'selected-card': image.isActive}">
+    <mat-icon class="selected-book" *ngIf="image.isActive">turned_in</mat-icon>
+    <mat-icon class="not-selected-book" *ngIf="!image.isActive">turned_in_not</mat-icon>
     <div class="book-image">
-        <a [routerLink]="['/books', index]" [queryParams]="{popularBooks: showPopularBooks}"><img [src]="book.imagePath"
-                class="card-img-top" alt="..."></a>
+        <a [routerLink]="['/books', index]" [queryParams]="{popularBooks: showPopularBooks}" routerLinkActive
+            #image="routerLinkActive">
+            <img [src]="book.imagePath" class="card-img-top" alt="...">
+        </a>
     </div>
     <div class="card-body">
         <a href="#" style="text-decoration: none;">

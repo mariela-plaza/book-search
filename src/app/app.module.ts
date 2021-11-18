@@ -13,6 +13,7 @@ import { BookComponent } from './book/book.component';
 import { BookListComponent } from './book/book-list/book-list.component';
 import { StarsComponent } from './book/book-details/stars/stars.component';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    RouterModule,
     MatIconModule,
     AppRoutingModule,
   ],

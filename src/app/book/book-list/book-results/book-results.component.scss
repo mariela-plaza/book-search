@@ -12,7 +12,6 @@
     }
 }
 
-
 .book-image {
     display: flex;
     justify-content: center;
@@ -44,4 +43,24 @@
     font-style: italic;
     font-weight: 500;
     color: rgb(0, 102, 255);
+}
+
+.selected-book {
+    padding-left: 0.25em;
+    padding-top: 0.25em;
+    width: 24px;
+    height: 24px;
+    color: #df6000;
+}
+
+.not-selected-book {
+    @extend .selected-book;
+    color: rgb(60, 73, 116);
+}
+
+.selected-card {
+    box-shadow: 10px 10px 20px #f2822c;
+    translate: (-10px, -10px);
+    border-radius: 2%;
+    transition: box-shadow 1s;
 }
