@@ -1,17 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
-
 body {
     background-color: #f8f9fa;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-// $my-custom-level: mat.define-typography-level(
-//   $font-family: 'Montagu Slab',
-//   $font-weight: 400,
-//   $font-size: 1.15rem,
-//   $line-height: 1.5,
-//   $letter-spacing: normal,
-// );
+html, body { height: 100%; font-family: Merriweather; }

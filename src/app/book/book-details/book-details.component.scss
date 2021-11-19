@@ -4,6 +4,11 @@
     top: 2rem;
  }
 
+.book-image {
+    width: 140px;
+    height: 200px;
+}
+
 .trim-text {
     display: block;
     display: -webkit-box;
@@ -25,7 +30,7 @@
 }
 
 .rating {
-    margin-top: 0.75rem;
+    margin: 0.75rem 0;
 
     .rating-text, .rating-stars {
         font-size: 1.5rem;
@@ -33,11 +38,12 @@
 }
 
 .categories {
-    margin-bottom: 1rem;
+    margin: 0.75rem 0;
+    margin-bottom: 1.5rem;
 
     .categories-text {
         font-size: 1.5rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.75rem;
     }
 
     .categories-list {
@@ -45,15 +51,20 @@
     }
 }
 
-
 .title {
-    margin-top: 1rem
+    margin: 1rem 0;
+    font-family: 'Merriweather';
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .authors {
+    margin: 0.75rem 0;
+    margin-bottom: 1.5rem;
+
     .authors-text {
         font-size: 1.5rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.75rem;
     }
 
     .authors-display {

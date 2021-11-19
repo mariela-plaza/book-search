@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscriber, Subscription } from 'rxjs';
-import { BooksService } from 'src/app/shared/books-service/books.service';
-import { InitialBooksService } from 'src/app/shared/books-service/initial-books.service';
+import { BooksService } from 'src/app/book/books-service/books.service';
+import { InitialBooksService } from 'src/app/book/books-service/initial-books.service';
 import { Book } from '../book.model';
 
 
@@ -28,6 +27,7 @@ export class BookDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.bookId = +params['id'];
+
         if (this.onPopularBooks) {
           this.selectedBook = this.initialBookService.getBook(this.bookId);
         } else {
@@ -35,5 +35,4 @@ export class BookDetailsComponent implements OnInit {
         }
       })
   }
-
 }

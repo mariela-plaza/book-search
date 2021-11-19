@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book } from '../book/book.model';
 import { APIWrapper } from './api-wrapper.model';
-import { BooksLoadedStatusService } from './books-service/books-loaded-status.service';
-import { BooksService } from './books-service/books.service';
-import { InitialBooksService } from './books-service/initial-books.service';
+import { BooksLoadedStatusService } from '../book/books-service/books-loaded-status.service';
+import { BooksService } from '../book/books-service/books.service';
+import { InitialBooksService } from '../book/books-service/initial-books.service';
 
 @Injectable({
   providedIn: 'root'

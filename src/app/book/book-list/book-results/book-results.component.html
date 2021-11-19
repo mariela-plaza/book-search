@@ -14,8 +14,9 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item book-rating-data">
-            <span>{{ book.avgRating }}({{ book.ratingsCount }})</span>
-            <span>{{ book.language }}</span>
+            <span>
+                <app-stars [rating]="book.avgRating"></app-stars>({{ book.ratingsCount }})
+            </span>
         </li>
         <li class="list-group-item book-authors">{{ book.authors[0] }}</li>
     </ul>

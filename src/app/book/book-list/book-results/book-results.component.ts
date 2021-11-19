@@ -11,7 +11,8 @@ export class BookResultsComponent implements OnInit {
   @Input() index: number;
   @Input() showPopularBooks: boolean;
 
+  constructor() { }
+
   ngOnInit(): void {
   }
-
 }

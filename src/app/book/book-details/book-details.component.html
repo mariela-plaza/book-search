@@ -1,7 +1,7 @@
 <div class="container pe-3">
     <div class="row image-description">
         <div class="col-12 col-xl-3 ps-4">
-            <img [src]="selectedBook.imagePath" alt="">
+            <img [src]="selectedBook.imagePath" alt="" class="book-image">
         </div>
         <div *ngIf="selectedBook.description" class="col-12 col-xl-9">
             <p class="trim-text">{{ selectedBook.description }}</p>
@@ -12,11 +12,10 @@
         <h4>{{ selectedBook.title }}</h4>
     </div>
 
-    <div *ngIf="selectedBook.avgRating" class="row rating">
+    <div class="row rating">
         <div class="d-flex justify-content-start">
             <p class="rating-text">Rating: </p>
             <app-stars [rating]="selectedBook.avgRating"></app-stars>
-            <!-- <p >{{ selectedBook.avgRating }}({{selectedBook.ratingsCount}})</p> -->
         </div>
     </div>
 

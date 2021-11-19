@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Book } from '../book.model';
-import { BooksService } from '../../shared/books-service/books.service';
-import { InitialBooksService } from 'src/app/shared/books-service/initial-books.service';
+import { BooksService } from '../books-service/books.service';
+import { InitialBooksService } from 'src/app/book/books-service/initial-books.service';
 import { APIBookService } from 'src/app/shared/api-book.service';
-import { BooksLoadedStatusService } from 'src/app/shared/books-service/books-loaded-status.service';
+import { BooksLoadedStatusService } from 'src/app/book/books-service/books-loaded-status.service';
 
 @Component({
   selector: 'app-book-list',
