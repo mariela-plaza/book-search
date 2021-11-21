@@ -26,8 +26,9 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
+    this.booksService.clearBooksArray();
     const queryParam = this.bookForm.value.queryParam;
-    this.booksSearch.searchQuery(queryParam);
+    this.booksSearch.searchBooks(queryParam);
   }
 
 }

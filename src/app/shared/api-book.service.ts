@@ -14,8 +14,8 @@ export class APIBookService {
   constructor(private http: HttpClient, private booksService: BooksService,
     private initialBooksService: InitialBooksService, private loadedBooksStatus: BooksLoadedStatusService) { }
 
-  searchQuery(queryParam: string) {
-    this.http.get<any>(`https://www.googleapis.com/books/v1/volumes?q=dogs+intitle:dogs&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE`)
+  searchBooks(queryParam: string = 'cats') {
+    this.http.get<any>(`https://www.googleapis.com/books/v1/volumes?q=${queryParam}+intitle:${queryParam}&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE`)
       .subscribe(data => {
         const apiWrapper = new APIWrapper(data);
         apiWrapper.removeUnfitItems();

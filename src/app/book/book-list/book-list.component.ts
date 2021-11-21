@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Book } from '../book.model';
 import { BooksService } from '../books-service/books.service';
@@ -11,7 +11,7 @@ import { BooksLoadedStatusService } from 'src/app/book/books-service/books-loade
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
   showPopularBooks: boolean;
   booksStatusSub: Subscription;
 
@@ -28,7 +28,7 @@ export class BookListComponent implements OnInit {
     // First list of books
     this.apiBooks.searchPopularBooks();
     this.booksStatusSub = this.loadedBooksStatus.isPopularBooks.subscribe(
-      popularBooks => this.showPopularBooks = popularBooks)
+      showPopularBooks => this.showPopularBooks = showPopularBooks)
 
     this.initialBooksArrayChanged = this.initialBooksService.initialBooksChanged.subscribe(
       initialBooks => {
@@ -41,7 +41,6 @@ export class BookListComponent implements OnInit {
         popularBooks => this.showPopularBooks = popularBooks)
       this.booksArray = books;
     })
-
   }
 
   ngOnDestroy() {

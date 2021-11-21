@@ -10,7 +10,6 @@ export class StarsComponent implements OnInit, OnChanges {
   count: number = 5;
   stars: boolean[] = [];
 
-
   constructor() { }
 
   ngOnChanges() {
