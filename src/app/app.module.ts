@@ -15,6 +15,7 @@ import { BookListComponent } from './book/book-list/book-list.component';
 import { StarsComponent } from './book/book-details/stars/stars.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     BrowserAnimationsModule,
     MatIconModule,
+    InfiniteScrollModule,
     AppRoutingModule,
   ],
   providers: [],

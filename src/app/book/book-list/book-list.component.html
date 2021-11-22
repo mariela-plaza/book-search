@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="col-12" infinite-scroll (scrolled)="onScrollDown($event)">
     <app-book-results *ngFor="let aBook of booksArray, let i=index" [book]="aBook" [index]=i>
     </app-book-results>
 </div>

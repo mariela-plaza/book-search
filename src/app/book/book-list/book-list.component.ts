@@ -11,9 +11,9 @@ import { APIBookService } from 'src/app/shared/api-book.service';
 })
 export class BookListComponent implements OnInit, OnDestroy {
   booksStatusSub: Subscription;
-
   booksArray: Book[] = [];
   booksChanged: Subscription
+  booksIndex: number = 0;
 
   constructor(private booksService: BooksService, private apiBooks: APIBookService) { }
 
@@ -24,6 +24,12 @@ export class BookListComponent implements OnInit, OnDestroy {
     this.booksChanged = this.booksService.booksChanged.subscribe(books => {
       this.booksArray = books;
     })
+  }
+
+  onScrollDown(event: any) {
+    console.log('scrolled down!', event);
+    this.booksIndex += 10;
+    this.apiBooks.searchBooks('', this.booksIndex);
   }
 
   ngOnDestroy() {
