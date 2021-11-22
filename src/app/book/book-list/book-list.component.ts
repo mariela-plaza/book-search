@@ -1,10 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Book } from '../book.model';
 import { BooksService } from '../books-service/books.service';
-import { InitialBooksService } from 'src/app/book/books-service/initial-books.service';
 import { APIBookService } from 'src/app/shared/api-book.service';
-import { BooksLoadedStatusService } from 'src/app/book/books-service/books-loaded-status.service';
 
 @Component({
   selector: 'app-book-list',
@@ -12,39 +10,23 @@ import { BooksLoadedStatusService } from 'src/app/book/books-service/books-loade
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit, OnDestroy {
-  showPopularBooks: boolean;
   booksStatusSub: Subscription;
 
   booksArray: Book[] = [];
   booksChanged: Subscription
 
-  initialBooksArray: Book[] = [];
-  initialBooksArrayChanged: Subscription;
-
-  constructor(private booksService: BooksService, private initialBooksService: InitialBooksService,
-    private loadedBooksStatus: BooksLoadedStatusService, private apiBooks: APIBookService) { }
+  constructor(private booksService: BooksService, private apiBooks: APIBookService) { }
 
   ngOnInit(): void {
-    // First list of books
-    this.apiBooks.searchPopularBooks();
-    this.booksStatusSub = this.loadedBooksStatus.isPopularBooks.subscribe(
-      showPopularBooks => this.showPopularBooks = showPopularBooks)
 
-    this.initialBooksArrayChanged = this.initialBooksService.initialBooksChanged.subscribe(
-      initialBooks => {
-        this.initialBooksArray = initialBooks;
-      })
+    this.apiBooks.searchBooks();
 
-    // List of Books fetched from requests
     this.booksChanged = this.booksService.booksChanged.subscribe(books => {
-      this.booksStatusSub = this.loadedBooksStatus.isPopularBooks.subscribe(
-        popularBooks => this.showPopularBooks = popularBooks)
       this.booksArray = books;
     })
   }
 
   ngOnDestroy() {
     this.booksChanged.unsubscribe();
-    this.initialBooksArrayChanged.unsubscribe();
   }
 }

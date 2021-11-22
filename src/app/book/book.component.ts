@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { BooksLoadedStatusService } from './books-service/books-loaded-status.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book',

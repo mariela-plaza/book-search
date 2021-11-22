@@ -9,7 +9,7 @@ import { Book } from '../../book.model';
 export class BookResultsComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
-  @Input() showPopularBooks: boolean;
+  // @Input() showBooks: boolean;
 
   constructor() { }
 

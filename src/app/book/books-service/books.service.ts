@@ -31,5 +31,4 @@ export class BooksService {
     this.booksChanged.next([...this.booksArray]);
   }
 
-
 }
