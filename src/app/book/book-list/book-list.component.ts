@@ -32,7 +32,6 @@ export class BookListComponent implements OnInit, OnDestroy {
   }
 
   onScrollDown(event: any) {
-    console.log('scrolled down!', event);
     this.booksIndex += 10;
     this.apiBooks.searchBooks(this.bookSearchParam, this.booksIndex);
   }
