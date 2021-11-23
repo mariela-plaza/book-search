@@ -6,11 +6,11 @@ import { APIBookService } from 'src/app/shared/api-book.service';
 import { BookSearchParamService } from '../books-service/book-search-param.service';
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss']
+  selector: 'app-book-results',
+  templateUrl: './book-results.component.html',
+  styleUrls: ['./book-results.component.scss']
 })
-export class BookListComponent implements OnInit, OnDestroy {
+export class BookResultsComponent implements OnInit, OnDestroy {
   booksStatusSub: Subscription;
   booksArray: Book[] = [];
   booksChanged: Subscription

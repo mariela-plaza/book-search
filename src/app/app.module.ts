@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { BookResultsComponent } from './book/book-list/book-results/book-results.component';
+import { BookCardsComponent } from './book/book-results/book-cards/book-cards.component';
 import { BookDetailsComponent } from './book/book-details/book-details.component';
 import { FormsModule } from '@angular/forms';
 import { BookComponent } from './book/book.component';
-import { BookListComponent } from './book/book-list/book-list.component';
+import { BookResultsComponent } from './book/book-results/book-results.component';
 import { StarsComponent } from './book/book-details/stars/stars.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
@@ -30,10 +30,10 @@ const icons = {
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    BookResultsComponent,
+    BookCardsComponent,
     BookDetailsComponent,
     BookComponent,
-    BookListComponent,
+    BookResultsComponent,
     StarsComponent
   ],
   imports: [
