@@ -16,7 +16,14 @@ import { StarsComponent } from './book/book-details/stars/stars.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+
+import { bookmarkHeart, search } from 'ngx-bootstrap-icons';
+
+const icons = {
+  bookmarkHeart,
+  search
+}
 
 @NgModule({
   declarations: [
@@ -37,7 +44,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     BrowserAnimationsModule,
     MatIconModule,
     InfiniteScrollModule,
-    ScrollingModule,
+    NgxBootstrapIconsModule.pick(icons),
     AppRoutingModule,
   ],
   providers: [],
