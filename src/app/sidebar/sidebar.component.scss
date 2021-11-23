@@ -2,10 +2,20 @@
     padding-top: 0.75rem;
     padding-right: 0.75rem;
     position: sticky;
-    top: 2rem;
+    top: 7rem;
 }
 
 a.nav-link {
     width: 75%;
     padding: 0.5rem 0;
+}
+
+@media(max-width: 768px) {
+    .container {
+        margin-top: 7rem;
+    }
+
+    a.nav-link {
+        width: auto;
+    }
 }
