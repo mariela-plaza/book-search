@@ -2,7 +2,8 @@
     margin-top: 1.4rem;
     position: sticky;
     top: 8rem;
- }
+    overflow: auto;
+}
 
 .book-image {
     width: 140px;
@@ -39,7 +40,6 @@
 
 .categories {
     margin: 0.75rem 0;
-    margin-bottom: 1.5rem;
 
     .categories-text {
         font-size: 1.5rem;
@@ -48,18 +48,18 @@
 
     .categories-list {
         font-size: 1.15rem;
+        margin: 0 0.75rem;
     }
 }
 
 .title {
-    margin: 1rem 0;
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: 700;
 }
 
 .authors {
     margin: 0.75rem 0;
-    margin-bottom: 1.5rem;
 
     .authors-text {
         font-size: 1.5rem;
@@ -68,6 +68,7 @@
 
     .authors-display {
         font-size: 1.15rem;
+        margin: 0 0.5rem;
     }
 }
 

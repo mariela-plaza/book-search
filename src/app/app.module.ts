@@ -16,6 +16,7 @@ import { StarsComponent } from './book/book-details/stars/stars.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     MatIconModule,
     InfiniteScrollModule,
+    ScrollingModule,
     AppRoutingModule,
   ],
   providers: [],

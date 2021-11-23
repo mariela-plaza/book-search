@@ -20,17 +20,20 @@
     </div>
 
     <div *ngIf="selectedBook.categories" class="row categories">
-        <p class="categories-text">Categories:</p>
-        <span class="categories-list" *ngFor="let category of selectedBook.categories">
-            <span class="badge rounded-pill bg-primary">{{ category }}</span>
-        </span>
+        <div class="d-flex justify-content-start">
+            <p class="categories-text">Categories: </p>
+            <span class="categories-list" *ngFor="let category of selectedBook.categories">
+                <span class="badge rounded-pill bg-primary">{{ category }}</span>
+            </span>
+        </div>
     </div>
 
     <div *ngIf="selectedBook.authors" class="row authors">
-        <p class="authors-text">Authors:</p>
-        <div class="authors-display" *ngFor="let author of selectedBook.authors">
-            <span class="badge rounded-pill bg-info">{{ author }}</span>
+        <div class="d-flex justify-content-start">
+            <p class="authors-text">Authors:</p>
+            <div class="authors-display" *ngFor="let author of selectedBook.authors">
+                <span class="badge rounded-pill bg-info">{{ author }}</span>
+            </div>
         </div>
-
     </div>
 </div>
