@@ -21,9 +21,9 @@
 
     <div *ngIf="selectedBook.categories" class="row categories">
         <p class="categories-text">Categories:</p>
-        <div class="categories-list" *ngFor="let category of selectedBook.categories">
+        <span class="categories-list" *ngFor="let category of selectedBook.categories">
             <span class="badge rounded-pill bg-primary">{{ category }}</span>
-        </div>
+        </span>
     </div>
 
     <div *ngIf="selectedBook.authors" class="row authors">

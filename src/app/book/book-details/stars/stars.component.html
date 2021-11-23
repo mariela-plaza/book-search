@@ -1,3 +1,5 @@
-<mat-icon *ngFor="let isEmpty of stars" class="star-icon">
-    {{ isEmpty ? 'star_border' : 'star' }}
-</mat-icon>
+<div class="star-icon">
+    <mat-icon *ngFor="let isEmpty of stars">
+        {{ isEmpty ? 'star_border' : 'star' }}
+    </mat-icon>
+</div>

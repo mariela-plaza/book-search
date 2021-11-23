@@ -8,9 +8,6 @@
         </a>
     </div>
     <div class="card-body">
-        <a href="#" style="text-decoration: none;">
-            <h5 class="card-title"></h5>
-        </a>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item book-rating-data">
@@ -18,6 +15,8 @@
                 <app-stars [rating]="book.avgRating"></app-stars>({{ book.ratingsCount }})
             </span>
         </li>
-        <li class="list-group-item book-authors">{{ book.authors[0] }}</li>
+        <li class="list-group-item book-authors d-flex">
+            <h4 class="author">{{ book.authors[0] }}</h4>
+        </li>
     </ul>
 </div>

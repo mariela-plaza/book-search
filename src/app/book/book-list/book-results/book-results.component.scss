@@ -40,9 +40,14 @@
 
 .book-authors {
     font-size: 1rem;
-    font-style: italic;
-    font-weight: 500;
     color: rgb(0, 102, 255);
+    height: 3.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.author {
+    margin: 0;
 }
 
 .selected-book {
