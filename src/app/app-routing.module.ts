@@ -13,7 +13,6 @@ const routes: Routes = [
       { path: ':id', component: BookDetailsComponent, canActivate: [BookDetailsGuard] }
     ]
   }
-
 ];
 
 @NgModule({
