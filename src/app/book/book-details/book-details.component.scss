@@ -2,7 +2,6 @@
     margin-top: 1.4rem;
     position: sticky;
     top: 8rem;
-    overflow: auto;
 }
 
 .book-image {
@@ -10,11 +9,17 @@
     height: 200px;
 }
 
+.book-description {
+    min-width: 340px;
+    max-width: 420px;
+    margin-left: 1.5rem;
+}
+
 .trim-text {
     display: block;
     display: -webkit-box;
 
-    height: 200px;
+    max-height: 200px;
 
     margin: 0 auto;
     line-height: 1.55;
@@ -76,4 +81,22 @@
 .image-placeholder {
     border-radius: 50%;
     display: flex;
+}
+
+
+@media(max-width: 1292px) {
+    .image-description, .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .book-description {
+        margin-top: 1rem;
+    }
+
+    .rating, .categories, .authors {
+        margin: 0.25rem 0;
+    }
 }

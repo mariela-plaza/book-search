@@ -1,4 +1,4 @@
-<div class="col-12 book-list" infinite-scroll (scrolled)="onScrollDown($event)">
+<div class="col-12 d-flex justify-content-center book-list" infinite-scroll (scrolled)="onScrollDown($event)">
     <app-book-cards *ngFor="let aBook of booksArray, let i=index" [book]="aBook" [index]=i>
     </app-book-cards>
 </div>
