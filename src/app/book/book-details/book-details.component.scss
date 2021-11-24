@@ -10,9 +10,9 @@
 }
 
 .book-description {
-    min-width: 340px;
+    min-width: 300px;
     max-width: 420px;
-    margin-left: 1.5rem;
+    margin-left: 0.85rem;
 }
 
 .trim-text {
@@ -39,7 +39,7 @@
     margin: 0.75rem 0;
 
     .rating-text, .rating-stars {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
     }
 }
 
@@ -47,13 +47,20 @@
     margin: 0.75rem 0;
 
     .categories-text {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
         margin-bottom: 0.75rem;
     }
 
     .categories-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.15rem;
         margin: 0 0.75rem;
+
+        .category {
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -67,13 +74,20 @@
     margin: 0.75rem 0;
 
     .authors-text {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
         margin-bottom: 0.75rem;
     }
 
     .authors-display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.15rem;
         margin: 0 0.5rem;
+
+        .author {
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -81,22 +95,4 @@
 .image-placeholder {
     border-radius: 50%;
     display: flex;
-}
-
-
-@media(max-width: 1292px) {
-    .image-description, .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .book-description {
-        margin-top: 1rem;
-    }
-
-    .rating, .categories, .authors {
-        margin: 0.25rem 0;
-    }
 }

@@ -3,7 +3,7 @@
         <div class="col-3">
             <img [src]="selectedBook.imagePath" alt="" class="book-image">
         </div>
-        <div class="col-9 book-description">
+        <div class="col-8 book-description">
             <p class="trim-text">{{ selectedBook.description }}</p>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="d-flex justify-content-start">
             <p class="categories-text">Categories: </p>
             <span class="categories-list" *ngFor="let category of selectedBook.categories">
-                <span class="badge rounded-pill bg-primary">{{ category }}</span>
+                <span class="badge rounded-pill bg-primary category">{{ category }}</span>
             </span>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="d-flex justify-content-start">
             <p class="authors-text">Authors:</p>
             <div class="authors-display" *ngFor="let author of selectedBook.authors">
-                <span class="badge rounded-pill bg-info">{{ author }}</span>
+                <span class="badge rounded-pill bg-info author">{{ author }}</span>
             </div>
         </div>
     </div>
