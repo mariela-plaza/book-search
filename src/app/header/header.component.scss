@@ -1,29 +1,55 @@
 .sticky {
-    position: fixed;
-    top: 0;
-    height: 7rem;
-    width: 100%;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  height: 7rem;
+  width: 100%;
+  z-index: 1;
+  padding-right: 1.5rem;
 }
 
 .navbar-brand {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-    font-size: 1.25rem;
-    .bookmark-heart {
-        color: darkred;
-        font-size: 2rem;
-        padding: 0.25em 0;
-    }
+  font-size: 1.25rem;
+  .bookmark-heart {
+    color: darkred;
+    padding: 0.25em 0;
+  }
 
-        
-    .navbar-title {
-        padding-left: 0.25em;
-        
-    }
+  .navbar-title {
+    padding-left: 0.25em;
+  }
 }
 
+.input-group {
+  width: 20rem;
+}
+
+@media (max-width: 510px) {
+  .input-group {
+    font-size: 0.9rem;
+    width: 12rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sticky {
+    height: 8rem;
+  }
+
+  .input-group {
+    font-size: 0.9rem;
+    width: 75vw;
+    padding-top: 0.25rem;
+  }
+}

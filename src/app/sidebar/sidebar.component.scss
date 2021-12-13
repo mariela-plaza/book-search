@@ -15,6 +15,7 @@ a.nav-link {
     // margin-top: 7rem;
     position: fixed;
     z-index: 1;
+    padding-bottom: 1rem;
   }
 
   .nav {
@@ -24,5 +25,11 @@ a.nav-link {
 
   a.nav-link {
     max-width: 9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    top: 8rem;
   }
 }
