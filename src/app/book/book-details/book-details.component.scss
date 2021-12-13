@@ -91,8 +91,14 @@
     }
 }
 
-
 .image-placeholder {
     border-radius: 50%;
     display: flex;
+}
+
+@media(max-width: 1200px) {
+    .container {
+        margin-top: 12rem;
+        margin-bottom: -8rem;
+    }
 }

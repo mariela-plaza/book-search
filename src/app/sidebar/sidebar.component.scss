@@ -12,7 +12,9 @@ a.nav-link {
 
 @media(max-width: 1200px) {
     .container {
-        margin-top: 7rem;
+        // margin-top: 7rem;
+        position: fixed;
+        z-index: 1;
     }
 
     a.nav-link {
