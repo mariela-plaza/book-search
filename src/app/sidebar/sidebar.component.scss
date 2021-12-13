@@ -1,23 +1,28 @@
 .container {
-    padding-top: 0.75rem;
-    padding-right: 0.75rem;
-    position: sticky;
-    top: 7rem;
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+  position: sticky;
+  top: 7rem;
 }
 
 a.nav-link {
-    width: 75%;
-    padding: 0.5rem 0;
+  width: 75%;
+  padding: 0.5rem 0;
 }
 
-@media(max-width: 1200px) {
-    .container {
-        // margin-top: 7rem;
-        position: fixed;
-        z-index: 1;
-    }
+@media (max-width: 1200px) {
+  .container {
+    // margin-top: 7rem;
+    position: fixed;
+    z-index: 1;
+  }
 
-    a.nav-link {
-        width: auto;
-    }
+  .nav {
+    justify-content: center;
+    width: 100vw;
+  }
+
+  a.nav-link {
+    max-width: 9rem;
+  }
 }
