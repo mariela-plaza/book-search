@@ -4,7 +4,7 @@
   top: 8rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .image-description {
@@ -128,5 +128,9 @@
   .image-layout {
     display: flex;
     justify-content: center;
+  }
+
+  .container {
+    align-items: center;
   }
 }
