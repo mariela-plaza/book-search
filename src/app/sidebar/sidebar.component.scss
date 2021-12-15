@@ -1,4 +1,4 @@
-.container {
+.container-fluid {
   padding-top: 0.75rem;
   padding-right: 0.75rem;
   position: sticky;
@@ -10,12 +10,13 @@ a.nav-link {
   padding: 0.5rem 0;
 }
 
-@media (max-width: 1200px) {
-  .container {
+@media (max-width: 991px) {
+  .container-fluid {
     // margin-top: 7rem;
     position: fixed;
     z-index: 1;
     padding-bottom: 1rem;
+    width: 100%;
   }
 
   .nav {
@@ -29,7 +30,7 @@ a.nav-link {
 }
 
 @media (max-width: 400px) {
-  .container {
+  .container-fluid {
     top: 8rem;
   }
 }

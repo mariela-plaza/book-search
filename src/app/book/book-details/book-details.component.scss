@@ -1,104 +1,132 @@
 .container {
-    margin-top: 1.4rem;
-    position: sticky;
-    top: 8rem;
+  margin-top: 1.4rem;
+  position: sticky;
+  top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-description {
+  justify-content: space-between;
 }
 
 .book-image {
-    width: 140px;
-    height: 200px;
+  width: 140px;
+  height: 200px;
 }
 
 .book-description {
-    min-width: 300px;
-    max-width: 420px;
-    margin-left: 0.85rem;
+  min-width: 250px;
+  max-width: 420px;
+  margin-left: 0.85rem;
 }
 
 .trim-text {
-    display: block;
-    display: -webkit-box;
+  display: block;
+  display: -webkit-box;
 
-    max-height: 200px;
+  max-height: 200px;
 
-    margin: 0 auto;
-    line-height: 1.55;
-    text-align: justify;
+  margin: 0 auto;
+  line-height: 1.55;
+  text-align: justify;
 
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-    &:hover {
-        overflow: scroll;
-    }
+  &:hover {
+    overflow: scroll;
+  }
 }
 
 .rating {
-    margin: 0.75rem 0;
+  margin: 0.75rem 0;
 
-    .rating-text, .rating-stars {
-        font-size: 1.15rem;
-    }
+  .rating-text,
+  .rating-stars {
+    font-size: 1.15rem;
+  }
 }
 
 .categories {
-    margin: 0.75rem 0;
+  margin: 0.75rem 0;
 
-    .categories-text {
-        font-size: 1.15rem;
-        margin-bottom: 0.75rem;
+  .categories-text {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .categories-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.15rem;
+    margin: 0 0.75rem;
+
+    .category {
+      flex-wrap: wrap;
     }
-
-    .categories-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.15rem;
-        margin: 0 0.75rem;
-
-        .category {
-            flex-wrap: wrap;
-        }
-    }
+  }
 }
 
 .title {
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .authors {
-    margin: 0.75rem 0;
+  margin: 0.75rem 0;
 
-    .authors-text {
-        font-size: 1.15rem;
-        margin-bottom: 0.75rem;
+  .authors-text {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .authors-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.15rem;
+    margin: 0 0.5rem;
+
+    .author {
+      flex-wrap: wrap;
     }
-
-    .authors-display {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.15rem;
-        margin: 0 0.5rem;
-
-        .author {
-            flex-wrap: wrap;
-        }
-    }
+  }
 }
 
 .image-placeholder {
-    border-radius: 50%;
-    display: flex;
+  border-radius: 50%;
+  display: flex;
 }
 
-@media(max-width: 1200px) {
-    .container {
-        margin-top: 12rem;
-        margin-bottom: -8rem;
-    }
+@media (max-width: 992px) {
+  .container {
+    margin-top: 12rem;
+    margin-bottom: -8rem;
+  }
+
+  .image-description {
+    justify-content: center;
+  }
+
+  .book-description {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .book-description {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .image-layout {
+    display: flex;
+    justify-content: center;
+  }
 }

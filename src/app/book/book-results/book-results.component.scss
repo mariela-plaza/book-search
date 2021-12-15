@@ -1,14 +1,14 @@
 .book-list {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 7rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 7rem;
 }
 
-@media(max-width: 1200px) {
-    .book-list {
-        // margin-top: 1rem;
-        margin-top: 9rem;
-    }
+@media (max-width: 992px) {
+  .book-list {
+    // margin-top: 1rem;
+    margin-top: 9rem;
+  }
 }
