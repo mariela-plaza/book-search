@@ -5,12 +5,14 @@
   top: 7rem;
 }
 
-a.nav-link {
-  width: 75%;
+button.btn {
+  width: 100%;
+  font-size: 0.9rem;
   padding: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .container-fluid {
     // margin-top: 7rem;
     position: fixed;
@@ -24,13 +26,19 @@ a.nav-link {
     width: 100vw;
   }
 
-  a.nav-link {
-    max-width: 9rem;
+  button.btn {
+    max-width: 8rem;
+    margin: 0 0.75rem;
   }
 }
 
 @media (max-width: 400px) {
   .container-fluid {
     top: 8rem;
+    padding-left: 0;
+  }
+
+  button.btn {
+    margin: auto;
   }
 }
