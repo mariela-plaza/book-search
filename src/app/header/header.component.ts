@@ -4,22 +4,26 @@ import { Router } from '@angular/router';
 import { APIBookService } from '../shared/api-book.service';
 import { BooksService } from '../book/books-service/books.service';
 import { BookSearchParamService } from '../book/books-service/book-search-param.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('form') bookForm: NgForm;
   bookSearchParam: string = 'cats';
 
-  constructor(private booksSearch: APIBookService, private router: Router,
-    private booksService: BooksService, private bookSearchService: BookSearchParamService) { }
+  constructor(
+    private booksSearch: APIBookService,
+    private router: Router,
+    private booksService: BooksService,
+    private bookSearchService: BookSearchParamService,
+    private scroller: ViewportScroller
+  ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onNavbarClick() {
     this.booksService.clearBooksArray();
@@ -32,6 +36,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
+    this.scroller.scrollToPosition([0, 0]);
     this.booksService.clearBooksArray();
 
     this.bookSearchParam = this.bookForm.value.queryParam;
@@ -39,5 +44,4 @@ export class HeaderComponent implements OnInit {
 
     this.booksSearch.searchBooks(this.bookSearchParam);
   }
-
 }
