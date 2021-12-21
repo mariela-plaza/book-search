@@ -8,6 +8,7 @@
 }
 
 .image-description {
+  align-self: flex-start;
   justify-content: space-between;
 }
 
@@ -87,14 +88,17 @@
   }
 
   .authors-display {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.15rem;
     margin: 0 0.5rem;
+    flex-wrap: wrap;
 
     .author {
-      flex-wrap: wrap;
+      flex-basis: content;
+      margin: 0.25rem;
     }
   }
 }
@@ -108,9 +112,11 @@
   .container {
     margin-top: 12rem;
     margin-bottom: -8rem;
+    align-items: center;
   }
 
   .image-description {
+    align-self: center;
     justify-content: center;
   }
 

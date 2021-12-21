@@ -31,8 +31,10 @@
     <div *ngIf="selectedBook.authors" class="row authors">
         <div class="d-flex justify-content-start">
             <p class="authors-text">Authors:</p>
-            <div class="authors-display" *ngFor="let author of selectedBook.authors">
-                <span class="badge rounded-pill bg-info author">{{ author }}</span>
+            <div class="authors-display">
+                <div *ngFor="let author of selectedBook.authors">
+                    <span class="badge rounded-pill bg-info author">{{ author }}</span>
+                </div>
             </div>
         </div>
     </div>

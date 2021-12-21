@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   onNavbarClick() {
+    this.scrollToTop();
     this.booksService.clearBooksArray();
 
     this.bookSearchParam = 'cats';
@@ -36,12 +37,16 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    this.scroller.scrollToPosition([0, 0]);
+    this.scrollToTop();
     this.booksService.clearBooksArray();
 
     this.bookSearchParam = this.bookForm.value.queryParam;
     this.bookSearchService.emitBookSearchParam(this.bookSearchParam);
 
     this.booksSearch.searchBooks(this.bookSearchParam);
+  }
+
+  scrollToTop() {
+    this.scroller.scrollToPosition([0, 0]);
   }
 }
