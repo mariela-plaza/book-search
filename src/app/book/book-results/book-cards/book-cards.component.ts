@@ -1,7 +1,13 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Book } from '../../book.model';
-import { BookSelectedCoordinatesService } from '../../books-service/book-selected-coordinates.service';
+import { BookSelectedScrollService } from '../../books-service/book-selected-coordinates.service';
 
 @Component({
   selector: 'app-book-cards',
@@ -12,10 +18,12 @@ export class BookCardsComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
   screenWidth: number;
+
+  @ViewChild('selectedBook') selectedBook;
   // @Input() showBooks: boolean;
 
   constructor(
-    private selectedBookCoordService: BookSelectedCoordinatesService,
+    private selectedBookCoordService: BookSelectedScrollService,
     private scroller: ViewportScroller
   ) {}
 
@@ -32,9 +40,11 @@ export class BookCardsComponent implements OnInit {
     if (this.screenWidth <= 991) {
       this.scroller.scrollToPosition([0, 0]);
     }
+
+    // console.log(typeof this.selectedBook.nativeElement.id);
     const selectedBookCoord = { xCoord: event.pageX, yCoord: event.pageY };
     this.selectedBookCoordService.emitSelectedBookCoordinates(
-      selectedBookCoord
+      this.selectedBook.nativeElement.id
     );
   }
 }

@@ -1,4 +1,4 @@
-<div class="card" [ngClass]="{'selected-card': image.isActive}">
+<div class="card" [ngClass]="{'selected-card': image.isActive}" id="{{ 'book' + index }}" #selectedBook>
     <mat-icon class="selected-book" *ngIf="image.isActive">turned_in</mat-icon>
     <mat-icon class="not-selected-book" *ngIf="!image.isActive">turned_in_not</mat-icon>
     <div class="book-image">

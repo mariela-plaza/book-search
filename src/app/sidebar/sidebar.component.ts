@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { BookSelectedCoordinatesService } from '../book/books-service/book-selected-coordinates.service';
+import { BookSelectedScrollService } from '../book/books-service/book-selected-coordinates.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,16 +8,16 @@ import { BookSelectedCoordinatesService } from '../book/books-service/book-selec
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  selectedBookCoord: { xCoord: number; yCoord: number };
+  selectedBookId: string;
 
   constructor(
     private scroller: ViewportScroller,
-    private selectedBookCoordService: BookSelectedCoordinatesService
+    private selectedBookCoordService: BookSelectedScrollService
   ) {}
 
   ngOnInit(): void {
     this.selectedBookCoordService.bookSelectedCoordinates.subscribe(
-      (selectedBookCoord) => (this.selectedBookCoord = selectedBookCoord)
+      (selectedBookId) => (this.selectedBookId = selectedBookId)
     );
   }
 
@@ -26,10 +26,12 @@ export class SidebarComponent implements OnInit {
   }
 
   onToCurrentBookClick() {
-    console.log(this.selectedBookCoord);
-    this.scroller.scrollToPosition([
+    console.log(this.selectedBookId);
+    this.scroller.scrollToAnchor(this.selectedBookId);
+
+    /*scrollToPosition([
       this.selectedBookCoord.xCoord,
       this.selectedBookCoord.yCoord,
-    ]);
+    ]);*/
   }
 }

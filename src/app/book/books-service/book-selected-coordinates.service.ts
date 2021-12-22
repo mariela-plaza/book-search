@@ -4,14 +4,11 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class BookSelectedCoordinatesService {
-  bookSelectedCoordinates = new Subject<{ xCoord: number; yCoord: number }>();
+export class BookSelectedScrollService {
+  bookSelectedCoordinates = new Subject<string>();
 
-  emitSelectedBookCoordinates(selectedBookCoord: {
-    xCoord: number;
-    yCoord: number;
-  }) {
-    this.bookSelectedCoordinates.next(selectedBookCoord);
+  emitSelectedBookCoordinates(bookId: string) {
+    this.bookSelectedCoordinates.next(bookId);
   }
 
   constructor() {}
