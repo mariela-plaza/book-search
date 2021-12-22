@@ -1,77 +1,83 @@
 .card {
-    width: 12.15rem;
-    display: inline-block;
-    margin: 1.15em;
-    box-shadow: 2px 2px 5px rgb(60, 73, 116);
-    border-radius: 2%;
-    transition: box-shadow 1s;
+  width: 12.15rem;
+  display: inline-block;
+  margin: 1.15em;
+  box-shadow: 2px 2px 5px rgb(60, 73, 116);
+  border-radius: 2%;
+  transition: box-shadow 1s;
 
-    &:hover {
-        box-shadow: 10px 10px 20px rgb(39, 133, 255);
-        translate: (-10px, -10px);
-    }
+  &:hover {
+    box-shadow: 10px 10px 20px rgb(39, 133, 255);
+    translate: (-10px, -10px);
+  }
 }
 
-@media(max-width: 1378px) {
-    .card {
-        width: 16rem;
-    }
+.book-ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1378px) {
+  .card {
+    width: 16rem;
+  }
 }
 
 .book-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
 }
 
 .card-img-top {
-    max-width: 10rem;
-    height: 200px;
-    border-radius: 10%;
-    box-shadow: 10px 10px 20px gray;
+  max-width: 10rem;
+  height: 200px;
+  border-radius: 10%;
+  box-shadow: 10px 10px 20px gray;
 }
 
 .card-title {
-    font-size: 1.05rem;
-    color: darkblue;
-    font-weight: 700;
+  font-size: 1.05rem;
+  color: darkblue;
+  font-weight: 700;
 }
 
 .book-rating-data {
-    display: flex;
-    justify-content: space-around;
-    font-size: 0.85rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.85rem;
 }
 
 .book-authors {
-    font-size: 1rem;
-    color: rgb(0, 102, 255);
-    height: 4.15rem;
-    justify-content: center;
-    align-items: center;
+  font-size: 1rem;
+  color: rgb(0, 102, 255);
+  height: 4.15rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .author {
-    margin: 0;
+  margin: 0;
 }
 
 .selected-book {
-    padding-left: 0.25em;
-    padding-top: 0.25em;
-    width: 24px;
-    height: 24px;
-    color: #df6000;
+  padding-left: 0.25em;
+  padding-top: 0.25em;
+  width: 24px;
+  height: 24px;
+  color: #df6000;
 }
 
 .not-selected-book {
-    @extend .selected-book;
-    color: rgb(60, 73, 116);
+  @extend .selected-book;
+  color: rgb(60, 73, 116);
 }
 
 .selected-card {
-    box-shadow: 10px 10px 20px #f2822c;
-    translate: (-10px, -10px);
-    border-radius: 2%;
-    transition: box-shadow 1s;
+  box-shadow: 10px 10px 20px #f2822c;
+  translate: (-10px, -10px);
+  border-radius: 2%;
+  transition: box-shadow 1s;
 }

@@ -10,8 +10,9 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item book-rating-data">
-            <span>
-                <app-stars [rating]="book.avgRating"></app-stars>({{ book.ratingsCount }})
+            <span class="book-ratings">
+                <app-stars [rating]="book.avgRating"></app-stars>
+                <div class="book-ratings-count">({{ book.ratingsCount }})</div>
             </span>
         </li>
         <li class="list-group-item book-authors d-flex">
