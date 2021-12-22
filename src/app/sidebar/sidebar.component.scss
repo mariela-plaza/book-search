@@ -18,27 +18,36 @@ button.btn {
     position: fixed;
     z-index: 1;
     padding-bottom: 1rem;
-    width: 100%;
+    width: 100vw;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .nav {
     justify-content: center;
     width: 100vw;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   button.btn {
     max-width: 8rem;
-    margin: 0 0.75rem;
+    margin: 0 0.5rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 415px) {
   .container-fluid {
     top: 8rem;
   }
 
-  button.btn {
-    margin: auto;
+  button.to-top {
+    margin: 0 0.5rem;
+    margin-left: 0;
+  }
+
+  button.to-book {
+    margin: 0 0.5rem;
+    margin-right: 1rem;
   }
 }

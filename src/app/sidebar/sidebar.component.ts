@@ -26,12 +26,6 @@ export class SidebarComponent implements OnInit {
   }
 
   onToCurrentBookClick() {
-    console.log(this.selectedBookId);
     this.scroller.scrollToAnchor(this.selectedBookId);
-
-    /*scrollToPosition([
-      this.selectedBookCoord.xCoord,
-      this.selectedBookCoord.yCoord,
-    ]);*/
   }
 }

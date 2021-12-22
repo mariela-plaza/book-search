@@ -41,8 +41,6 @@ export class BookCardsComponent implements OnInit {
       this.scroller.scrollToPosition([0, 0]);
     }
 
-    // console.log(typeof this.selectedBook.nativeElement.id);
-    const selectedBookCoord = { xCoord: event.pageX, yCoord: event.pageY };
     this.selectedBookCoordService.emitSelectedBookCoordinates(
       this.selectedBook.nativeElement.id
     );
