@@ -12,16 +12,16 @@
   }
 }
 
-.book-ratings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @media (max-width: 1378px) {
   .card {
     width: 16rem;
   }
+}
+
+.book-ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-image {

@@ -43,28 +43,46 @@
   }
 }
 
-.rating {
+// mixins
+
+@mixin margin-settings {
   margin: 0.75rem 0;
+}
+
+@mixin font-size-settings($font-size-value) {
+  font-size: $font-size-value;
+}
+
+@mixin margin-bottom-settings {
+  margin-bottom: 0.75rem;
+}
+
+@mixin margin-bottom-font-size-settings {
+  @include margin-bottom-settings();
+  @include font-size-settings(1.15rem);
+}
+
+.rating {
+  @include margin-settings();
 
   .rating-text,
   .rating-stars {
-    font-size: 1.15rem;
+    @include font-size-settings(1.15rem);
   }
 }
 
 .categories {
-  margin: 0.75rem 0;
+  @include margin-settings();
 
   .categories-text {
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
+    @include margin-bottom-font-size-settings();
   }
 
   .categories-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.15rem;
+    @include font-size-settings(1.15rem);
     margin: 0 0.75rem;
 
     .category {
@@ -75,16 +93,15 @@
 
 .title {
   margin-top: 1rem;
-  font-size: 2rem;
+  @include font-size-settings(2rem);
   font-weight: 700;
 }
 
 .authors {
-  margin: 0.75rem 0;
+  @include margin-settings();
 
   .authors-text {
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
+    @include margin-bottom-font-size-settings();
   }
 
   .authors-display {
@@ -92,7 +109,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.15rem;
+    @include font-size-settings(1.15rem);
     margin: 0 0.5rem;
     flex-wrap: wrap;
 

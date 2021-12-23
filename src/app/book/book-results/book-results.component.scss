@@ -9,18 +9,19 @@
 .book-error {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 8rem;
   padding: 7rem 1.5rem;
 
-  .book-error-title {
-    align-self: center;
+  .book-error-code {
+    font-size: 2.5rem;
   }
 
   .book-error-message {
     padding-top: 0.75rem;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-style: italic;
+    text-align: center;
   }
 }
 

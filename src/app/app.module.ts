@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,11 +19,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 import { bookmarkHeart, search } from 'ngx-bootstrap-icons';
+import { CommonModule } from '@angular/common';
+import { BookSelectComponent } from './book/book-select/book-select.component';
 
 const icons = {
   bookmarkHeart,
-  search
-}
+  search,
+};
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ const icons = {
     BookDetailsComponent,
     BookComponent,
     BookResultsComponent,
-    StarsComponent
+    BookSelectComponent,
+    StarsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,6 @@ const icons = {
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

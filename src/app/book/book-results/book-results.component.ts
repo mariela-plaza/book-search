@@ -40,7 +40,6 @@ export class BookResultsComponent implements OnInit, OnDestroy {
 
     this.apiBookErrorService.apiBookError.subscribe((error) => {
       this.apiBookError = error;
-      console.log(this.apiBookError);
     });
   }
 
