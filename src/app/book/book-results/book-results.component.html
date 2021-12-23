@@ -1,4 +1,12 @@
-<div class="col-12 d-flex justify-content-center book-list" infinite-scroll (scrolled)="onScrollDown($event)">
+<div *ngIf="!apiBookError" class="col-12 d-flex justify-content-center book-list" infinite-scroll
+    (scrolled)="onScrollDown($event)">
     <app-book-cards *ngFor="let aBook of booksArray, let i=index" [book]="aBook" [index]=i>
     </app-book-cards>
+</div>
+<div *ngIf="apiBookError" class="col-12 book-error alert alert-danger alert-dismissible fade show" role="alert">
+    <h2 class="book-error-title">Books not found</h2>
+    <p><b>Status code:</b> {{apiBookError.status}}</p>
+    <p><b>Status text:</b> {{apiBookError.statusText}}</p>
+    <p class="book-error-message">Please, check your internet connection or try again later.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>

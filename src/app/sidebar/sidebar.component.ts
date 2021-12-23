@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { BookSelectedScrollService } from '../book/books-service/book-selected-coordinates.service';
+import { BookSelectedScrollService } from '../book/books-service/book-selected-scroll.service';
 
 @Component({
   selector: 'app-sidebar',

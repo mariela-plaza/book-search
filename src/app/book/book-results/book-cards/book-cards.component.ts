@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Book } from '../../book.model';
-import { BookSelectedScrollService } from '../../books-service/book-selected-coordinates.service';
+import { BookSelectedScrollService } from '../../books-service/book-selected-scroll.service';
 
 @Component({
   selector: 'app-book-cards',

@@ -6,6 +6,24 @@
   margin-top: 7rem;
 }
 
+.book-error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 8rem;
+  padding: 7rem 1.5rem;
+
+  .book-error-title {
+    align-self: center;
+  }
+
+  .book-error-message {
+    padding-top: 0.75rem;
+    font-size: 1.05rem;
+    font-style: italic;
+  }
+}
+
 @media (max-width: 992px) {
   .book-list {
     // margin-top: 1rem;

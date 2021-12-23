@@ -4,31 +4,44 @@ import { Book } from '../book.model';
 import { BooksService } from '../books-service/books.service';
 import { APIBookService } from 'src/app/shared/api-book.service';
 import { BookSearchParamService } from '../books-service/book-search-param.service';
+import { ApiBookErrorService } from 'src/app/shared/api-book-error.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-results',
   templateUrl: './book-results.component.html',
-  styleUrls: ['./book-results.component.scss']
+  styleUrls: ['./book-results.component.scss'],
 })
 export class BookResultsComponent implements OnInit, OnDestroy {
   booksStatusSub: Subscription;
   booksArray: Book[] = [];
-  booksChanged: Subscription
+  booksChanged: Subscription;
   booksIndex: number = 0;
   bookSearchParam: string = 'cats';
+  apiBookError: HttpErrorResponse = null;
 
-  constructor(private booksService: BooksService, private apiBooks: APIBookService, private bookSearchService: BookSearchParamService) { }
+  constructor(
+    private booksService: BooksService,
+    private apiBooks: APIBookService,
+    private bookSearchService: BookSearchParamService,
+    private apiBookErrorService: ApiBookErrorService
+  ) {}
 
   ngOnInit(): void {
     this.apiBooks.searchBooks(this.bookSearchParam);
 
-    this.booksChanged = this.booksService.booksChanged.subscribe(books => {
+    this.booksChanged = this.booksService.booksChanged.subscribe((books) => {
       this.booksArray = books;
-    })
+    });
 
     this.bookSearchService.bookSearchParam.subscribe(
-      searchParam => this.bookSearchParam = searchParam
-    )
+      (searchParam) => (this.bookSearchParam = searchParam)
+    );
+
+    this.apiBookErrorService.apiBookError.subscribe((error) => {
+      this.apiBookError = error;
+      console.log(this.apiBookError);
+    });
   }
 
   onScrollDown(event: any) {
