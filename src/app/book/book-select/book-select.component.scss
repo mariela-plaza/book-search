@@ -1,0 +1,17 @@
+.book-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+@media (max-width: 992px) {
+  .book-select {
+    margin-top: 13rem;
+    text-align: center;
+
+    .book-select-text {
+      margin-bottom: -7rem;
+    }
+  }
+}
