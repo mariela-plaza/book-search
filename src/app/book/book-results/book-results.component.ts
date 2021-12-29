@@ -13,12 +13,14 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./book-results.component.scss'],
 })
 export class BookResultsComponent implements OnInit, OnDestroy {
-  booksStatusSub: Subscription;
   booksArray: Book[] = [];
   booksChanged: Subscription;
+
   booksIndex: number = 0;
   bookSearchParam: string = 'cats';
+
   apiBookError: HttpErrorResponse = null;
+  apiErrorSub: Subscription;
 
   constructor(
     private booksService: BooksService,
@@ -38,9 +40,11 @@ export class BookResultsComponent implements OnInit, OnDestroy {
       (searchParam) => (this.bookSearchParam = searchParam)
     );
 
-    this.apiBookErrorService.apiBookError.subscribe((error) => {
-      this.apiBookError = error;
-    });
+    this.apiErrorSub = this.apiBookErrorService.apiBookError.subscribe(
+      (error) => {
+        this.apiBookError = error;
+      }
+    );
   }
 
   onScrollDown(event: any) {
@@ -50,5 +54,6 @@ export class BookResultsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.booksChanged.unsubscribe();
+    this.apiErrorSub.unsubscribe();
   }
 }

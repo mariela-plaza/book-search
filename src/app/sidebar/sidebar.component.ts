@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { BookSelectedScrollService } from '../book/books-service/book-selected-scroll.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { BookSelectedScrollService } from '../book/books-service/book-selected-s
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
   selectedBookId: string;
+  changedBookId: Subscription;
 
   constructor(
     private scroller: ViewportScroller,
@@ -16,9 +18,10 @@ export class SidebarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.selectedBookCoordService.bookSelectedCoordinates.subscribe(
-      (selectedBookId) => (this.selectedBookId = selectedBookId)
-    );
+    this.changedBookId =
+      this.selectedBookCoordService.bookSelectedCoordinates.subscribe(
+        (selectedBookId) => (this.selectedBookId = selectedBookId)
+      );
   }
 
   onToTopClick() {
@@ -27,5 +30,9 @@ export class SidebarComponent implements OnInit {
 
   onToCurrentBookClick() {
     this.scroller.scrollToAnchor(this.selectedBookId);
+  }
+
+  ngOnDestroy() {
+    this.changedBookId.unsubscribe();
   }
 }
