@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  googleBooksKey: 'AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE',
 };

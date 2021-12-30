@@ -5,6 +5,8 @@ import { APIWrapper } from './api-wrapper.model';
 import { BooksService } from '../book/books-service/books.service';
 import { ApiBookErrorService } from './api-book-error.service';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -18,7 +20,7 @@ export class APIBookService {
   searchBooks(bookSearchParam: string, startIndex: number = 0) {
     this.http
       .get<any>(
-        `https://www.googleapis.com/books/v1/volumes?q=${bookSearchParam}+intitle:${bookSearchParam}&startIndex=${startIndex}&key=AIzaSyDxqCMvt7YcqbT4m-9J2ONJmlK35yxsCkE`
+        `https://www.googleapis.com/books/v1/volumes?q=${bookSearchParam}+intitle:${bookSearchParam}&startIndex=${startIndex}&key=${environment.googleBooksKey}`
       )
       .subscribe(
         (data) => {
