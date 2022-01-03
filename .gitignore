@@ -41,6 +41,10 @@ yarn-error.log
 testem.log
 /typings
 
+# hosting - firebase
+.firebaserc
+/.firebase
+
 # System Files
 .DS_Store
 Thumbs.db
