@@ -27,27 +27,22 @@
 }
 
 .input-group {
-  width: 20rem;
+  width: 78vw;
 }
 
-@media (max-width: 576px) {
-  .navbar-brand {
-    margin-left: 0.75rem;
-  }
-}
-
-@media (max-width: 510px) {
+@media (max-width: 991px) {
   .input-group {
-    font-size: 0.9rem;
-    width: 12rem;
-  }
-
-  .navbar-brand {
-    margin-left: 0.5rem;
+    width: 65vw;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
+  .input-group {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 700px) {
   .container-fluid {
     display: flex;
     justify-content: center;

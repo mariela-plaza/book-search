@@ -1,22 +1,27 @@
-<div class="card" [ngClass]="{'selected-card': image.isActive}" id="{{ 'book' + index }}" #selectedBook>
-    <mat-icon class="selected-book" *ngIf="image.isActive">turned_in</mat-icon>
-    <mat-icon class="not-selected-book" *ngIf="!image.isActive">turned_in_not</mat-icon>
-    <div class="book-image">
-        <a [routerLink]="['/books', index]" routerLinkActive #image="routerLinkActive" (click)="onSelectBook($event)">
-            <img [src]="book.imagePath" class="card-img-top" alt="...">
-        </a>
-    </div>
+<div class="card" [routerLink]="['/books', index]" routerLinkActive #activeBook="routerLinkActive"
+    [ngClass]="{'selected-card': activeBook.isActive}" id="{{ 'book' + index }}" (click)="onSelectBook($event)"
+    #selectedBook>
+
     <div class="card-body">
+        <mat-icon class="selected-book" *ngIf="activeBook.isActive">turned_in</mat-icon>
+        <mat-icon class="not-selected-book" *ngIf="!activeBook.isActive">turned_in_not</mat-icon>
+        <div class="book-image">
+            <a>
+                <img [src]="book.imagePath" class="card-img-top" alt="...">
+            </a>
+        </div>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item book-rating-data">
-            <span class="book-ratings">
-                <app-stars [rating]="book.avgRating"></app-stars>
-                <div class="book-ratings-count">({{ book.ratingsCount }})</div>
-            </span>
-        </li>
-        <li class="list-group-item book-authors d-flex">
-            <h4 class="author">{{ book.authors[0] }}</h4>
-        </li>
-    </ul>
+    <div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item book-rating-data">
+                <span class="book-ratings">
+                    <app-stars [rating]="book.avgRating"></app-stars>
+                    <div class="book-ratings-count">({{ book.ratingsCount }})</div>
+                </span>
+            </li>
+            <li class="list-group-item book-authors d-flex">
+                <h4 class="author">{{ book.authors[0] }}</h4>
+            </li>
+        </ul>
+    </div>
 </div>

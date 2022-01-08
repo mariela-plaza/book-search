@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@use '@angular/material' as mat;
-body {
-    background-color: #f8f9fa;
-}
+$theme-colors: (
+  "primary": #052c65,
+  "info": darkred,
+);
 
-// html, body { height: 100%; font-family: Merriweather; }
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/badge";
+
+body {
+  background-color: #f8f9fa;
+}
