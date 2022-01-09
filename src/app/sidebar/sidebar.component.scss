@@ -13,9 +13,8 @@ button.btn {
   border-radius: 15px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.5px) {
   .container-fluid {
-    // margin-top: 7rem;
     position: fixed;
     z-index: 1;
     padding-bottom: 1rem;

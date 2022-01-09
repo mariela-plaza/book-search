@@ -37,7 +37,7 @@ export class BookCardsComponent implements OnInit {
   }
 
   onSelectBook(event) {
-    if (this.screenWidth <= 991) {
+    if (this.screenWidth <= 992) {
       this.scroller.scrollToPosition([0, 0]);
     }
 
