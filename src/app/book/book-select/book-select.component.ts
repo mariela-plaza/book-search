@@ -20,8 +20,6 @@ export class BookSelectComponent implements OnInit, OnDestroy {
         this.apiError = error;
       }
     );
-
-    console.log(this.apiError);
   }
 
   ngOnDestroy(): void {
